@@ -6,7 +6,7 @@
 
 using namespace std; 
 
-std:: unordered_map<string, int> look_up = {
+unordered_map<string, int> look_up = {
         { "jan", 1 },
         { "feb", 2 }, 
         { "mar", 3 }, 
@@ -23,7 +23,7 @@ std:: unordered_map<string, int> look_up = {
 };
 
 
-bool Month::set_month () {
+bool Month::set_month () {                  //Completed set_month via substring & int 
 string x,y,substring,lowercase; 
 int myNumbered;
 
@@ -46,7 +46,7 @@ if(y.length() > 0){
     myNumbered = look_up[substring];
     }
 
-    if(myNumbered>0 & myNumbered<=12){
+ if(myNumbered>0 & myNumbered<=12){
         myMonth = myNumbered; 
         return true;
     }else{
@@ -55,24 +55,43 @@ if(y.length() > 0){
 
 }
 
-short Month:: get_month () {
-        return myMonth; 
+string Month:: get_month () {
+      int month = myMonth; 
+
+      switch(month){
+        case 1: return "January";
+        break; 
+        case 2: return "Febuary";
+        break; 
+        case 3: return "March";
+        break; 
+        case 4: return "April";
+        break; 
+        case 5: return "May"; 
+        break; 
+        case 6: return "June";
+        break; 
+        case 7: return "July";
+        break; 
+        case 8: return "August";
+        break; 
+        case 9: return "Sepetember";
+        break; 
+        case 10: return "October";
+        break; 
+        case 11: return "November";
+        break; 
+        case 12: return "December"; 
+
+        default: return "NA";
+        break; 
 
 }
-
-bool Month:: advance (int x) { 
-    int getMonth = get_month();
-    cout << getMonth;
-    if( x > 12){
-        return false; 
-    }else{
-        myMonth = myMonth + x; 
-        return true; 
-    }
-
-
-
 }
+
+// bool Month:: advance (int x) { 
+   
+// }
 
 
 

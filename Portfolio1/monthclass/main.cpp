@@ -43,6 +43,7 @@ while(!exit){
 
     case 1 : myobj.set_month() == true ? cout << "\nMonth Assigned" : cout << "\nMonth Rejected";
         break;
+    case 2 : cout << myobj.get_month();
 
 
 

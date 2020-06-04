@@ -1,3 +1,4 @@
+#include <string>
 #ifndef Month_H
 #define Month_H
 
@@ -10,7 +11,7 @@ public:
 
 bool set_month();
 
-short get_month();
+std:: string get_month();
 
 bool advance(int);
 
