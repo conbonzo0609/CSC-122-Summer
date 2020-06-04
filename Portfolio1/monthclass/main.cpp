@@ -44,6 +44,13 @@ while(!exit){
     case 1 : myobj.set_month() == true ? cout << "\nMonth Assigned" : cout << "\nMonth Rejected";
         break;
     case 2 : cout << myobj.get_month();
+        break; 
+    case 3 : myobj.advance() == true ? cout << "\nMonth Advanced" : cout << "\nMonth Advancement Failed"; 
+        break; 
+    case 4 : myobj.retreat() == true ? cout << "\nMonth Retreated" : cout <<  "\nMonth Retreated Failed"; 
+        break; 
+    case 5 : exit = true; 
+    break; 
 
 
 

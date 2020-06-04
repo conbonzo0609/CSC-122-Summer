@@ -13,9 +13,9 @@ bool set_month();
 
 std:: string get_month();
 
-bool advance(int);
+bool advance();
 
-bool retreat(int);
+bool retreat();
 
 
 };
