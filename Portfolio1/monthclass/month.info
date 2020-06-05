@@ -1,0 +1,13 @@
+NAME: Connor Smithb
+Class: CSC-122-W01
+Date: 06/05/2020
+LAB: Month Class
+Level: 4
+Total Level: 4
+Description: The menu of the program has four options SetMonth, GetMonth, 
+AdanceMonth, RetreatMonth, and Exit. SetMonth will allow you to enter
+a string or integer value for the month. GetMonth will return 
+the integer value stored in the class via a string of the month. 
+AdvanceMonth is looking for a integer/string(probably should remove that) advancement which will update 
+the month if less than 12. RetreatMonth will do the exact same thing but will go backwards. Exit button 
+will end the program. 

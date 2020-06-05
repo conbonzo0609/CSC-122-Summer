@@ -2,6 +2,7 @@
 #include "month.h"
 #include <string>
 #include <unordered_map>
+#include <limits>
 
 using namespace std; 
 
@@ -14,7 +15,7 @@ unordered_map<string, int> look_up = {   // Month -> Number Lookup
         { "jun", 6 }, 
         { "jul", 7 }, 
         { "aug", 8 }, 
-        { "sept",9},
+        { "sep", 9},
         {"oct", 10},
         {"nov", 11},
         {"dec", 12}
@@ -26,7 +27,7 @@ bool Month::set_month () {                  //Completed set_month via substring 
     string x,y,substring,lowercase; 
     int myNumbered;
 
-    cout << "Please enter the Month";
+    cout << "Please enter the Month\n";
 
     cin >> x; 
 
@@ -54,8 +55,8 @@ bool Month::set_month () {                  //Completed set_month via substring 
 
 }
 
-string Month:: get_month () {              // Returns Month based on integer from class 
-                                           // via string
+string Month:: get_month () {              
+                                           
       int month = myMonth; 
 
       switch(month){
@@ -89,81 +90,85 @@ string Month:: get_month () {              // Returns Month based on integer fro
 }
 }
 
-bool Month:: advance () {                  // Advances....i've added substring advancement, but kinda pointless
-    string answer,stringAnswer,numericAnswer; 
-    int myInt;
-    cout << "\nPlease enter your advancement"; 
+bool Month:: advance () {                 
+    
+    int answer; 
+    bool failSafe= true;  
+    
 
-    cin >> answer; 
 
+    cout << "Please enter your advancement\n"; 
 
-    for(string::size_type i = 0; i<answer.length(); i++){
-        if(isdigit (answer[i])){
-        numericAnswer += answer[i];
-    }else{
-        stringAnswer += tolower(answer[i]);
-    }
-}
+    while(failSafe){
 
-    if(stringAnswer.length() > 0){
+        cin >> answer; 
 
-        myInt = look_up[stringAnswer.substr(0,3)];
-
-    }else if(myInt + myMonth > 12){
-        cout << "Invalid Month Entry. Please retreat! ";
-        return false;
-    }else if(stoi(numericAnswer) + myMonth > 12){
-        cout << "Invalid Month Entry Please retreat! ";
-        return false; 
-    }else if(stringAnswer.length() > 0){
-        myMonth = myMonth + myInt;
-        return true; 
-    }else{
-        myMonth = myMonth + stoi(numericAnswer);
-        return true; 
-}
-        return false; 
-
+        if(cin.fail()){
+            cout << "Please enter a number" 
+                 << "\nJan:1\nFeb:2\nMar:3" 
+                 << "\nApr:4\nMay:5\nJune:6"
+                 << "\nJuly:7\nAug:8:\nSept:9"
+                 << "\nOct:10\nNov:11\nDec:12\n";
+        cin.clear();
+        cin.ignore(std::numeric_limits<int>::max(),'\n');
+        }else if((answer+myMonth <= 12) && (answer+myMonth > 0)){
+            failSafe=false; 
+            myMonth = myMonth + answer;
+            return true; 
+        }else{
+            cout << "\nERROR TOTAL NUMBER IS GREATER THAN 12";
+            break; 
+        }
     }
 
-bool Month:: retreat() {                    // Advances....i've added substring advancement, but kinda pointless
-
-    string answer,stringAnswer,numericAnswer; 
-    int myInt;
-    cout << "Please enter your retreatment"; 
-
-    cin >> answer; 
+ return false; //Should never reach this point; 
 
 
-    for(string::size_type i = 0; i<answer.length(); i++){
-        if(isdigit (answer[i])){
-        numericAnswer += answer[i];
-    }else{
-        stringAnswer += tolower(answer[i]);
-    }
 }
 
-    if(stringAnswer.length() > 0){
 
-    myInt = look_up[stringAnswer.substr(0,3)];
 
-    }else if(myMonth - myInt > 12){                    //If goes over 12 it will need to retreat
-        cout << "Invalid Month Entry. Please retreat! ";
-        return false;
-    }else if(myMonth - stoi(numericAnswer) > 12){
-        cout << "Invalid Month Entry Please retreat! ";
-        return false; 
-    }else if(stringAnswer.length() > 0){
-        myMonth = myMonth - myInt;
-        return true; 
-    }else{
-        myMonth = myMonth - stoi(numericAnswer);
-        return true; 
+
+
+
+bool Month:: retreat() { 
+     int answer; 
+     bool failSafe = true;  
+    
+
+
+    cout << "Please enter your Retreatment\n"; 
+
+    while(failSafe){
+
+        cin >> answer; 
+
+        if(cin.fail()){
+            cout << "Please enter a number" 
+                 << "\nJan:1\nFeb:2\nMar:3" 
+                 << "\nApr:4\nMay:5\nJune:6"
+                 << "\nJuly:7\nAug:8:\nSept:9"
+                 << "\nOct:10\nNov:11\nDec:12\n";
+        cin.clear();
+        cin.ignore(std::numeric_limits<int>::max(),'\n');
+        }else if((myMonth - answer <= 12) && (myMonth - answer > 0)){
+            failSafe=false; 
+            myMonth = myMonth - answer;
+            return true; 
+        }else{
+            cout << "\nERROR TOTAL NUMBER IS GREATER THAN 12";
+            break; 
+        }
+    }
+
+ return false; //Should never reach this point; 
+
+
 }
 
-        return false; 
 
-    }
+
+
 
 
 

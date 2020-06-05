@@ -1,1 +1,0 @@
-http://www.craie-programming.org/122/labs/monthclass.html
