@@ -23,29 +23,29 @@ unordered_map<string, int> look_up = {   // Month -> Number Lookup
 
 
 bool Month::set_month () {                  //Completed set_month via substring & int 
-string x,y,substring,lowercase; 
-int myNumbered;
+    string x,y,substring,lowercase; 
+    int myNumbered;
 
-cout << "Please enter the Month";
+    cout << "Please enter the Month";
 
-cin >> x; 
+    cin >> x; 
 
-for(string::size_type a = 0; a<x.length(); a++){
-    if(isdigit (x[a])){
-        y += x[a];
+    for(string::size_type a = 0; a<x.length(); a++){
+        if(isdigit (x[a])){
+            y += x[a];
     }else{
         lowercase += tolower(x[a]);
     }
 }
 
-if(y.length() > 0){
-     myNumbered = stoi(y);
-}else{
-    substring = lowercase.substr(0,3);
-    myNumbered = look_up[substring];
+    if(y.length() > 0){
+        myNumbered = stoi(y);
+    }else{
+        substring = lowercase.substr(0,3);
+        myNumbered = look_up[substring];
     }
 
- if(myNumbered>0 & myNumbered<=12){
+    if(myNumbered>0 & myNumbered<=12){
         myMonth = myNumbered; 
         return true;
     }else{
@@ -90,83 +90,80 @@ string Month:: get_month () {              // Returns Month based on integer fro
 }
 
 bool Month:: advance () {                  // Advances....i've added substring advancement, but kinda pointless
-string answer,stringAnswer,numericAnswer; 
-int myInt;
-cout << "\nPlease enter your advancement"; 
+    string answer,stringAnswer,numericAnswer; 
+    int myInt;
+    cout << "\nPlease enter your advancement"; 
 
-cin >> answer; 
+    cin >> answer; 
 
 
-for(string::size_type i = 0; i<answer.length(); i++){
-    if(isdigit (answer[i])){
+    for(string::size_type i = 0; i<answer.length(); i++){
+        if(isdigit (answer[i])){
         numericAnswer += answer[i];
     }else{
         stringAnswer += tolower(answer[i]);
     }
 }
 
-if(stringAnswer.length() > 0){
+    if(stringAnswer.length() > 0){
 
-myInt = look_up[stringAnswer.substr(0,3)];
+        myInt = look_up[stringAnswer.substr(0,3)];
 
-}else if(myInt + myMonth > 12){
-    cout << "Invalid Month Entry. Please retreat! ";
-    return false;
-}else if(stoi(numericAnswer) + myMonth > 12){
-    cout << "Invalid Month Entry Please retreat! ";
-    return false; 
-}else if(stringAnswer.length() > 0){
-    myMonth = myMonth + myInt;
-    return true; 
-}else{
-
-    myMonth = myMonth + stoi(numericAnswer);
-    return true; 
+    }else if(myInt + myMonth > 12){
+        cout << "Invalid Month Entry. Please retreat! ";
+        return false;
+    }else if(stoi(numericAnswer) + myMonth > 12){
+        cout << "Invalid Month Entry Please retreat! ";
+        return false; 
+    }else if(stringAnswer.length() > 0){
+        myMonth = myMonth + myInt;
+        return true; 
+    }else{
+        myMonth = myMonth + stoi(numericAnswer);
+        return true; 
 }
+        return false; 
 
-return false; 
-
-}
+    }
 
 bool Month:: retreat() {                    // Advances....i've added substring advancement, but kinda pointless
 
-string answer,stringAnswer,numericAnswer; 
-int myInt;
-cout << "\nPlease enter your advancement"; 
+    string answer,stringAnswer,numericAnswer; 
+    int myInt;
+    cout << "Please enter your retreatment"; 
 
-cin >> answer; 
+    cin >> answer; 
 
 
-for(string::size_type i = 0; i<answer.length(); i++){
-    if(isdigit (answer[i])){
+    for(string::size_type i = 0; i<answer.length(); i++){
+        if(isdigit (answer[i])){
         numericAnswer += answer[i];
     }else{
         stringAnswer += tolower(answer[i]);
     }
 }
 
-if(stringAnswer.length() > 0){
+    if(stringAnswer.length() > 0){
 
-myInt = look_up[stringAnswer.substr(0,3)];
+    myInt = look_up[stringAnswer.substr(0,3)];
 
-}else if(myInt + myMonth > 12){                    //If goes over 12 it will need to retreat
-    cout << "Invalid Month Entry. Please retreat! ";
-    return false;
-}else if(stoi(numericAnswer) + myMonth > 12){
-    cout << "Invalid Month Entry Please retreat! ";
-    return false; 
-}else if(stringAnswer.length() > 0){
-    myMonth = myMonth - myInt;
-    return true; 
-}else{
-
-    myMonth = myMonth - stoi(numericAnswer);
-    return true; 
+    }else if(myMonth - myInt > 12){                    //If goes over 12 it will need to retreat
+        cout << "Invalid Month Entry. Please retreat! ";
+        return false;
+    }else if(myMonth - stoi(numericAnswer) > 12){
+        cout << "Invalid Month Entry Please retreat! ";
+        return false; 
+    }else if(stringAnswer.length() > 0){
+        myMonth = myMonth - myInt;
+        return true; 
+    }else{
+        myMonth = myMonth - stoi(numericAnswer);
+        return true; 
 }
 
-return false; 
+        return false; 
 
-}
+    }
 
 
 

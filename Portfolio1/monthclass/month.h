@@ -5,17 +5,17 @@
 class Month
 {
 
-int myMonth; 
+    int myMonth; 
 
 public: 
 
-bool set_month();
+    bool set_month();
 
-std:: string get_month();
+    std:: string get_month();
 
-bool advance();
+    bool advance();
 
-bool retreat();
+    bool retreat();
 
 
 };
