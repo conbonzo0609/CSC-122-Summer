@@ -91,21 +91,30 @@ string Month:: get_month () {
 }
 
 bool Month:: advance () {                 
-   
+   int x,temp; 
+    cout << "Please enter your advancement"; 
 
+    cin >> x; 
+
+    if(x+myMonth > 12){
+         temp = myMonth + x; 
+
+        myMonth = temp % 12; 
+    }else{
+        myMonth = myMonth + x; 
+    }
 
 
 }
 
 
+////Use modulo to break months remainder. 
 
 
 
 
 bool Month:: retreat () {                 
-    
-
-
+ 
 
 }
 
