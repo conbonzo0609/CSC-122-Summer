@@ -92,36 +92,25 @@ string Month:: get_month () {
 
 bool Month:: advance () {                 
     
-    int answer; 
-    bool failSafe= true;  
-    
+    ///25 
+       ////6
 
+       int counter = get_month; ///While loop counter
+       int advancement = 25;  // advancement
+       int temp = 6;  ////return value
 
-    cout << "Please enter your advancement\n"; 
+    while(counter < advancement)
 
-    while(failSafe){
-
-        cin >> answer; 
-
-        if(cin.fail()){
-            cout << "Please enter a number" 
-                 << "\nJan:1\nFeb:2\nMar:3" 
-                 << "\nApr:4\nMay:5\nJune:6"
-                 << "\nJuly:7\nAug:8:\nSept:9"
-                 << "\nOct:10\nNov:11\nDec:12\n";
-        cin.clear();
-        cin.ignore(std::numeric_limits<int>::max(),'\n');
-        }else if((answer+myMonth <= 12) && (answer+myMonth > 0)){
-            failSafe=false; 
-            myMonth = myMonth + answer;
-            return true; 
-        }else{
-            cout << "\nERROR TOTAL NUMBER IS GREATER THAN 12";
-            break; 
+        //// Increase; 
+        
+        if(temp == 12){
+            temp = 0; 
         }
-    }
 
- return false; //Should never reach this point; 
+
+        temp++;  
+        counter++;
+
 
 
 }
