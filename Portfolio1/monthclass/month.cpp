@@ -96,14 +96,13 @@ bool Month:: advance () {
 
     cin >> x; 
 
-    if(x+myMonth > 12){
-         temp = myMonth + x; 
+    myMonth = (myMonth + x) % 12;
 
-        myMonth = temp % 12; 
-    }else{
-        myMonth = myMonth + x; 
+    if(myMonth == 0){
+        myMonth = 12; 
     }
 
+    return true; 
 
 }
 
@@ -114,7 +113,20 @@ bool Month:: advance () {
 
 
 bool Month:: retreat () {                 
- 
+    int x; 
+
+    cout << "Please enter your retreatment";
+
+    cin >> x;
+
+    
+    myMonth = (myMonth - x) % 12;
+
+    if(myMonth == 0){
+        myMonth = 12; 
+    }
+
+    return true; 
 
 }
 
