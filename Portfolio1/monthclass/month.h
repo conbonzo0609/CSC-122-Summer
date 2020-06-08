@@ -8,6 +8,9 @@ class Month
     int myMonth; 
 
 public: 
+Month(){
+    myMonth = 0;
+}
 
     bool set_month();
 
