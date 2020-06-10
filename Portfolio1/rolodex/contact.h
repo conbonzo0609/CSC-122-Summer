@@ -1,5 +1,5 @@
 #include <string> 
-
+#include <iostream>
 #ifndef Contact_H
 #define Contact_H
 
@@ -18,9 +18,38 @@ class Contact
     short zip_4;
     char phone[MAX_PHONE];
 
+public:
 
+bool add();
+bool findAddress(char *str1);
+bool findName(char *str1);
+bool findPhone(char *str1); 
+bool findEmail(char *str1); 
+bool print_chart();
 
 };
+
+inline void subMenu(){
+
+    std:: cout << "\n1) find by Name\n2) find by Address" 
+         << "\n3) find by Phone number\n4) find by Email address\n"
+         << "5) Return to Main Menu\n"
+         << "Enter your option []: \n"; 
+
+
+
+
+}
+
+inline void mainMenu(){
+     
+
+   std:: cout << "1) Add entry\n2) Edit entry\n3) Delete entry\n"
+         << "4) Find entry\n5) Print all entries\n6) Quit\nEnter your option []: \n";
+
+}
+
+
 
 
 #endif
