@@ -2,39 +2,49 @@
 #include <string>
 #include <iomanip>
 #include <iostream>
-
+#include <limits>
 
 using namespace std; 
 
 bool Contact :: add(){
+cin.clear();
+cin.ignore(std::numeric_limits<int>::max(),'\n');
 
-    cout << "Firstname:\n"; 
-    cin.getline(fname,46);
-    cout << "Lastname:\n";
-    cin.getline(lname,46); 
-    cout << "Street:\n";
-    cin.getline(street,46);
-    cout << "Town:\n";
-    cin.getline(town,28);
-    cout << "State:\n";
-    cin.getline(state,3);
-    cout << "ZipCode\n";
-    cin >> zip;
-    cout << "Zip+4\n";
-    cin >> zip_4;
-    cout << "Phone Number"; 
-    cin >> phone; 
+cout << "Firstname: \n";
+cin.getline(fname, sizeof(fname), '\n'); 
+
+cout << "Lastname: \n"; 
+cin.getline(lname, sizeof(lname), '\n');
+
+cout << "Street: \n"; 
+cin.getline(street, sizeof(street), '\n');
+
+cout << "Town: \n";
+cin.getline(town, sizeof(town), '\n');
+
+cout << "ZIP: \n"; 
+cin >> zip;
+cin.ignore(std::numeric_limits<int>::max(),'\n');
+
+cout << "Phone: \n";
+cin.getline(phone, sizeof(phone), '\n');
+
+return true; 
+
+   
 
 }
 
 bool Contact :: findAddress(char *str1){
 
+        
 
 }
 
 bool Contact :: findName(char *str1){
 
-
+    if(str1 == fname)
+        return true; 
 
 }
 
@@ -66,7 +76,8 @@ bool Contact :: print_chart(){
          << std::setw(11)
          << zip 
          << std:: setw(8)
-         << state;
+         << state
+         << endl;
 
     return true; 
 

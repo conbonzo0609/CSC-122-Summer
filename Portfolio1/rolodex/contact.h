@@ -15,7 +15,7 @@ class Contact
     char fname[MAX_NAME], lname[MAX_NAME];  
     char street[MAX_STREET], town[MAX_TOWN], state[MAX_STATE];
     long zip;
-    short zip_4;
+    // short zip_4; 
     char phone[MAX_PHONE];
 
 public:
