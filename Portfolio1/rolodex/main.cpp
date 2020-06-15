@@ -8,130 +8,168 @@ using namespace std;
 
 
 int main(){
+    
+
+
+
+
     Contact myobj[100];
-    char myconfig[100] = {};
-   
-    bool test = true;
-    bool test1 = true;  
-    int menu,menu2,counter,counter2; 
+    bool program = true; 
+    char choice,choice2,choice3; 
+    long counter = 0; 
+    long x,answer;
+    
 
-    while (test)
+    while (program)
     {
+    
+       mainMenu();
 
-        mainMenu();
-        cin >> menu;
-
-        if(cin.fail()){
-            cout << "Please enter a number for the menu";
-            cin.clear();
-            cin.ignore(std::numeric_limits<int>::max(),'\n');
-        }else{
-
-            switch (menu)
-            {
-        case 1: 
-            counter2 = 0; 
-            cout << (myobj[counter2].add() == true ? "Contact Successfully Saved\n" : "Contact Save Failed\n");
-            counter2++; 
-            break; 
-        case 2: 
-            break; 
-        case 3: 
-            break; 
-        case 4: 
-                while(test1){
-                subMenu();
-                cin >> menu2;
-                if(cin.fail()){
-                cout << "Please enter a number for the menu\n";
-                cin.clear();
-                cin.ignore(std::numeric_limits<int>::max(),'\n');
-               }else{
-                switch (menu2)
-                {
-                case 1: 
-                    cout << "Please enter the name\n";
-                    cin >> myconfig;
-                    counter = 0; 
-                    while(counter<100){
-                        if(myobj[counter].findName(myconfig)){
-                            myobj[counter].print_chart();
-                            break; 
-                        }else{
-                            counter++;
-                        }
-                        cout << "Not Found";
-                        break; 
-
-                    }
-                    
-                    break;
-                case 2: 
-                    cout << "Please enter the address\n";
-                     cin >> myconfig;
-                     counter = 0; 
-                      while(counter<100){
-                        if(myobj[counter].findAddress(myconfig)){
-                            myobj[counter].print_chart();
-                                
-                        }else{
-                            counter++;
-                        }
-                        cout << "Not Found";
-                        break; 
-
-                    }
-                     
-                    break; 
-                case 3: 
-                    cout << "Please enter the Phone Number\n";
-                    cin >> myconfig;
-                     while(counter<100){
-                        if(myobj[counter].findPhone(myconfig)){
-                            myobj[counter].print_chart();
-                                
-                        }else{
-                            counter++;
-                        }
-                        cout << "Not Found";
-                        break; 
-
-                    }
-                   
-                    break; 
-                case 4:
-                    cout << "Please enter the Email\n";
-                    cin >> myconfig;
-                     while(counter<100){
-                        if(myobj[counter].findEmail(myconfig)){
-                            myobj[counter].print_chart();
-                            break; 
-                        }else{
-                            counter++;
-                        }
-                        cout << "Not Found";
-                        break; 
-
-                    }
-                    break; 
-                case 5: mainMenu();
-                break; 
+       cin >> choice; 
+    
+       switch(choice){
+           case '1' : 
+           case 'A' : 
+           myobj[counter].add();
+           counter++; 
+           break;
+           case '2':
+           case 'E':
+           x = 0; 
+           while(x<counter){
+            if(myobj[x].validEntry()){
+            cout << x << ") ";
+            myobj[x].print_chart();
             }
-                break; 
-                    }
-                }
 
-            case 5: 
-                break; 
-            case 6: return 0; 
-                break; 
-
-
-
-
-            }
+            x++; 
 
          }
-    }
-    
+            cout << "\n" << "Please enter the entry you would like to edit" << "\n";
+            cin  >> answer; 
+            editMenu();
+            cin >> choice2;
+            switch (choice2)
+            {
+                case '1':
+                case 'N':
+                myobj[answer].editName();
+                break; 
+                case '2':
+                case 'A':
+                myobj[answer].editAddress();
+                break;
+                case '3':
+                case 'P':
+                myobj[answer].editPhone();
+                break; 
+                case '4':
+                case 'E':
+                myobj[answer].editEmail();
+                break; 
+                case '5':
+                case 'M':
+                break;
+
 }
+        break; 
+        
+        case '3':
+        case 'D':
+        x = 0; 
+        while(x<counter){
+            if(myobj[x].validEntry()){
+            cout << x << ") ";
+            myobj[x].print_chart();
+            }
+
+            x++; 
+        }
+        cout << "Please enter the entry you would like to delete\n";
+        cin >> answer; 
+        myobj[answer].empty();
+        break; 
+        case '4':
+        case 'F':
+        subMenu();
+        cin >> choice3;
+    switch (choice3)
+            {
+            case '1':
+            case 'N':
+            char firstname[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the email you're looking for\n";
+            cin.getline(firstname, sizeof(firstname),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lookEmail(firstname) == 0){
+                    cout << "FOUND";
+                    break; 
+                }
+                x++; 
+            }
+
+
+            break;
+
+            case '2':
+            case 'A':
+
+            break; 
+
+            case '3':
+            case 'P':
+
+            break; 
+
+            case '4':
+            case 'E':
+
+            break; 
+
+            case '5':
+            case 'R':
+            break; 
+
+                
+
+        }
+        break; 
+        case 'P':
+        case '5':
+        ////Print All Entries form 
+        break; 
+
+        case 'Q':
+        case '6':
+        return 0;
+
+    }
+
+
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+   
+
+
+
