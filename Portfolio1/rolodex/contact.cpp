@@ -181,6 +181,7 @@ void Contact :: print_chart(){
 
 }
 
+
 void Contact :: empty(){
     memset(fname,0,sizeof(fname));
     memset(lname,0,sizeof(lname));

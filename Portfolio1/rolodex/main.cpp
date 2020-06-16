@@ -1,6 +1,9 @@
-#include <iostream>
 #include "contact.h"
-#include <limits> 
+#include <string>
+#include <iomanip>
+#include <iostream>
+#include <limits>
+#include <cstring>
 
 using namespace std; 
 
@@ -96,17 +99,17 @@ int main(){
     switch (choice3)
             {
             case '1':
-            case 'N':
+            case 'F':
             char firstname[45];
             cin.clear();
             cin.ignore(std::numeric_limits<int>::max(),'\n');
-            cout << "Please enter the email you're looking for\n";
+            cout << "Please enter the firstName you're looking for\n";
             cin.getline(firstname, sizeof(firstname),'\n');
             x = 0; 
 
             while(x < 100){
-                if(myobj[x].lookEmail(firstname) == 0){
-                    cout << "FOUND";
+                if(myobj[x].firstName(firstname) == 0){
+                    myobj[x].print_chart();
                     break; 
                 }
                 x++; 
@@ -116,37 +119,169 @@ int main(){
             break;
 
             case '2':
-            case 'A':
+            case 'L':
+
+            char lastname[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the lastname you're looking for\n";
+            cin.getline(lastname, sizeof(lastname),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lastName(lastname) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
 
             break; 
 
             case '3':
-            case 'P':
+            case 'H':
+             char house[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the house address you're looking for\n";
+            cin.getline(house, sizeof(house),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].houseNumber(house) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
+
 
             break; 
 
             case '4':
-            case 'E':
+            case 'Z':
+
+             int zip; 
+            cin.clear();
+            cout << "Please enter the zip you're looking for\n";
+            cin >> zip; 
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lookzip(zip) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
 
             break; 
 
             case '5':
-            case 'R':
+            case 'T':
+
+             char town[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the town you're looking for\n";
+            cin.getline(town, sizeof(town),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].looktown(town) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
+
+
+
             break; 
 
+            case '6':
+            case 'S':
+
+             char state[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the state you're looking for\n";
+            cin.getline(state, sizeof(state),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lookstate(state) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
+
+
+            break;
+
+            case '7':
+            case 'P':
+
+             char phone[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the phone you're looking for\n";
+            cin.getline(phone, sizeof(phone),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lookPhone(phone) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
+
+
+
+            break; 
+
+            case '8':
+            case 'E':
+
+             char email[45];
+            cin.clear();
+            cin.ignore(std::numeric_limits<int>::max(),'\n');
+            cout << "Please enter the email you're looking for\n";
+            cin.getline(email, sizeof(email),'\n');
+            x = 0; 
+
+            while(x < 100){
+                if(myobj[x].lookEmail(email) == 0){
+                    myobj[x].print_chart();
+                    break; 
+                }
+                x++; 
+            }
+            
+
+
+
+
+            break; 
+
+            case '9':
+            case 'M':
+            break; 
                 
 
         }
         break; 
         case 'P':
         case '5':
-        ////Print All Entries form 
-        break; 
+        ///Prints all entries; 
 
         case 'Q':
         case '6':
         return 0;
-
+        
     }
 
 

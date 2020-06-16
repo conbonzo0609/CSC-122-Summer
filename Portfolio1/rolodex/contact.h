@@ -40,11 +40,13 @@ int lookzip(long zip);
 int looktown(char c[]);
 int lookstate(char c[]);
 
+
 // bool findAddress(char *str1);
 // bool findName(char *str1);
 // bool findPhone(char *str1); 
 // bool findEmail(char *str1); 
 void print_chart();
+
 };
 
 inline void subMenu(){
