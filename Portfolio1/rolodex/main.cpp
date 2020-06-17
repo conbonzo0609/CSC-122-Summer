@@ -20,7 +20,7 @@ int main(){
     bool program = true; 
     char choice,choice2,choice3; 
     long counter = 0; 
-    long x,answer;
+    long x,answer,y;
     
 
     while (program)
@@ -276,11 +276,19 @@ int main(){
         break; 
         case 'P':
         case '5':
-        ///Prints all entries; 
+        y = 0; 
+        cout << "NAME                         Address                        Phone                  EMAIL\n"
+             << "-----------------+-----------------------------------+------------------+---------------------------+\n";
+        while(y<counter){
+            myobj[y].print_chart();
+            y++;
+        }
+        break; 
 
         case 'Q':
         case '6':
         return 0;
+        
         
     }
 

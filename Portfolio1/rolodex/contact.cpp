@@ -4,6 +4,7 @@
 #include <iostream>
 #include <limits>
 #include <cstring>
+#include <cstdio>
 
 using namespace std; 
 
@@ -168,16 +169,35 @@ int Contact :: lookstate(char c[]){
 
 void Contact :: print_chart(){
 
-    cout << fname << " " << lname << " || " 
-    << street << "," 
-    << town << "," 
-    << zip << "," 
-    << state 
-    << " || " 
-    << phone 
-    << " || " << email << "\n"; 
+    // cout << fname << " " << lname << " || " 
+    // << street << "," 
+    // << town << "," 
+    // << zip << "," 
+    // << state 
+    // << " || " 
+    // << phone 
+    // << " || " << email << "\n"; 
 
+   
+cout << fname << " " << lname
+    << setw(19)
+    << street
+    << "," 
+     << town 
+     << ","
+     << state
+     << setw(14)
+     << phone
+     << setw(31)
+     << email
+     << endl;
 
+     //-----------------+---------------------------+------------------+---------------+
+
+        //  setw(11);
+        //  setw(28);
+        //  setw(18);
+        //  setw(19);
 
 }
 
