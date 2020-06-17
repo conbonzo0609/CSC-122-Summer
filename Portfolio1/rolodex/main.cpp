@@ -108,7 +108,7 @@ int main(){
             x = 0; 
 
             while(x < 100){
-                if(myobj[x].firstName(firstname) == 0){
+                if(myobj[x].lookfirstName(firstname) == 0){
                     myobj[x].print_chart();
                     break; 
                 }
@@ -129,7 +129,7 @@ int main(){
             x = 0; 
 
             while(x < 100){
-                if(myobj[x].lastName(lastname) == 0){
+                if(myobj[x].looklastName(lastname) == 0){
                     myobj[x].print_chart();
                     break; 
                 }
@@ -148,7 +148,7 @@ int main(){
             x = 0; 
 
             while(x < 100){
-                if(myobj[x].houseNumber(house) == 0){
+                if(myobj[x].lookhouseNumber(house) == 0){
                     myobj[x].print_chart();
                     break; 
                 }
@@ -295,21 +295,6 @@ int main(){
 
 }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
    

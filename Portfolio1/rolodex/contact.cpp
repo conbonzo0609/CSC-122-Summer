@@ -8,36 +8,35 @@
 
 using namespace std; 
 
-bool Contact :: add(){
-cin.clear();
-cin.ignore(std::numeric_limits<int>::max(),'\n');
+void Contact :: add(){
+    cin.clear();
+    cin.ignore(std::numeric_limits<int>::max(),'\n');
 
-cout << "Firstname: \n";
-cin.getline(fname, sizeof(fname), '\n'); 
+    cout << "Firstname: \n";
+    cin.getline(fname, sizeof(fname), '\n'); 
 
-cout << "Lastname: \n"; 
-cin.getline(lname, sizeof(lname), '\n');
+    cout << "Lastname: \n"; 
+    cin.getline(lname, sizeof(lname), '\n');
 
-cout << "Street Number: \n"; 
-cin.getline(street, sizeof(street), '\n');
+    cout << "Street Number: \n"; 
+    cin.getline(street, sizeof(street), '\n');
 
-cout << "Town: \n";
-cin.getline(town, sizeof(town), '\n');
+    cout << "Town: \n";
+    cin.getline(town, sizeof(town), '\n');
 
-cout << "ZIP: \n"; 
-cin >> zip;
-cin.ignore(std::numeric_limits<int>::max(),'\n');
+    cout << "ZIP: \n"; 
+    cin >> zip;
+    cin.ignore(std::numeric_limits<int>::max(),'\n');
 
-cout << "State: \n";
-cin.getline(state, sizeof(state), '\n');
+    cout << "State: \n";
+    cin.getline(state, sizeof(state), '\n');
 
-cout << "Phone: \n";
-cin.getline(phone, sizeof(phone), '\n');
+    cout << "Phone: \n";
+    cin.getline(phone, sizeof(phone), '\n');
 
-cout << "Email: \n";
-cin.getline(email, sizeof(email), '\n');
+    cout << "Email: \n";
+    cin.getline(email, sizeof(email), '\n');
 
-return true; 
 
    
 
@@ -102,15 +101,15 @@ int Contact :: lookPhone(char c[]){
         return strcmp(c,phone);
 }
 
-int Contact :: firstName(char c[]){
+int Contact :: lookfirstName(char c[]){
     return strcmp(c,fname);
 }
 
-int Contact :: lastName(char c[]){
+int Contact :: looklastName(char c[]){
     return strcmp(c,lname);
 }
 
-int Contact :: houseNumber(char c[]){
+int Contact :: lookhouseNumber(char c[]){
     return strcmp(c,street);
 }
 
@@ -130,74 +129,16 @@ int Contact :: lookstate(char c[]){
     return strcmp(c, state);
 }
 
-
-
-
-
-
-
-
-
-
-
-// bool Contact :: findAddress(char *str1){
-
-//     return false;  
-// }
-
-// bool Contact :: findName(char *str1){
-    
-        
-
-// }
-
-// bool Contact :: findPhone(char *str1){
-
-//     if(str1 == phone)
-//         return true; 
-//         return false; 
-
-
-// }
-
-// bool Contact :: findEmail(char *str1){
-
-//     if(str1 == email)
-//         return true;
-//         return false; 
-// }
-
 void Contact :: print_chart(){
 
-    // cout << fname << " " << lname << " || " 
-    // << street << "," 
-    // << town << "," 
-    // << zip << "," 
-    // << state 
-    // << " || " 
-    // << phone 
-    // << " || " << email << "\n"; 
-
-   
-cout << fname << " " << lname
-    << setw(19)
-    << street
-    << "," 
-     << town 
-     << ","
-     << state
-     << setw(14)
-     << phone
+    cout << fname << " " << lname
+    << setw(19) << street << "," 
+    << town << ","<< state << setw(14)
+    << phone
      << setw(31)
      << email
      << endl;
 
-     //-----------------+---------------------------+------------------+---------------+
-
-        //  setw(11);
-        //  setw(28);
-        //  setw(18);
-        //  setw(19);
 
 }
 
@@ -221,9 +162,6 @@ bool Contact :: validEntry(){
 
     return false; 
         
-
-
-
 }
 
 

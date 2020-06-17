@@ -23,29 +23,22 @@ public:
 
 
 
-bool add();
-bool validEntry();
-void editName();
-void getName();
-void editAddress();
-void editPhone();
-void editEmail();
-void empty();
-int lookEmail(char c[]);
-int lookPhone(char c[]);
-int firstName(char c[]);
-int lastName(char c[]);
-int houseNumber(char c[]);
-int lookzip(long zip);
-int looktown(char c[]);
-int lookstate(char c[]);
-
-
-// bool findAddress(char *str1);
-// bool findName(char *str1);
-// bool findPhone(char *str1); 
-// bool findEmail(char *str1); 
-void print_chart();
+    void add();
+    void editName();
+    void editAddress();
+    void editPhone();
+    void editEmail();
+    void empty();
+    void print_chart();
+    bool validEntry();
+    int lookEmail(char c[]);
+    int lookPhone(char c[]);
+    int lookfirstName(char c[]);
+    int looklastName(char c[]);
+    int lookhouseNumber(char c[]);
+    int lookzip(long zip);
+    int looktown(char c[]);
+    int lookstate(char c[]);
 
 };
 

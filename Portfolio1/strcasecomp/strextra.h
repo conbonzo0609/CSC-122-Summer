@@ -5,7 +5,7 @@
 
 
 
-short strcmp_ncase(char *str1, char *str2);
+int strcmp_ncase(char *str1, char *str2, char y = 'N');
 
 
 
