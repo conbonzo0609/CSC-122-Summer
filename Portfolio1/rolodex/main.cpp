@@ -4,6 +4,9 @@
 #include <iostream>
 #include <limits>
 #include <cstring>
+#include <iostream>
+#include <fstream>
+#include <vector> 
 
 using namespace std; 
 
@@ -17,10 +20,17 @@ int main(){
 
 
     Contact myobj[100];
+    ofstream myfile,total;
+    ifstream multiple; 
+     
+    vector<string> myFileContainer;
     bool program = true; 
     char choice,choice2,choice3; 
-    long counter = 0; 
-    long x,answer,y;
+    long counter = 0;
+    long counter9 = 0;
+    char ch; 
+    string myEntry;
+    long x,answer,y,type,filetrack,files;
     
 
     while (program)
@@ -161,15 +171,15 @@ int main(){
             case '4':
             case 'Z':
 
-             int zip; 
+             int zipcode; 
             cin.clear();
             cout << "Please enter the zip you're looking for\n";
-            cin >> zip; 
+            cin >> zipcode; 
             cin.ignore(std::numeric_limits<int>::max(),'\n');
             x = 0; 
 
             while(x < 100){
-                if(myobj[x].lookzip(zip) == 0){
+                if(myobj[x].lookzip(zipcode) == 0){
                     myobj[x].print_chart();
                     break; 
                 }
@@ -285,8 +295,54 @@ int main(){
         }
         break; 
 
-        case 'Q':
+        case 'S':
         case '6':
+        
+
+       counter9 = 0; 
+       cout << "Please enter your file name";
+       cin >> myEntry; 
+        myfile.open (myEntry);
+        myFileContainer.push_back(myEntry);
+
+        while(counter9 < counter){
+           myfile << myobj[counter9].getData();
+            counter9++;
+        }
+
+        myfile.close();
+        
+        break;
+
+        case 'L':
+        case '7':
+        
+        total.open("total.txt");
+
+        files = myFileContainer.size();      //////Struggling to append 
+                                             /////Files from a vector holding file
+                                            /// names. 
+
+        for(int b = 0; b<files; b++){
+
+            multiple.open(myFileContainer[b]);
+            while(multiple.eof() == 0){
+                    multiple >> ch;
+                    total << ch;
+        }
+
+}
+
+
+
+
+        break; 
+        
+
+
+
+        case 'Q':
+        case '8':
         return 0;
         
         

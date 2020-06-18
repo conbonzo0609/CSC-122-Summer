@@ -36,9 +36,10 @@ public:
     int lookfirstName(char c[]);
     int looklastName(char c[]);
     int lookhouseNumber(char c[]);
-    int lookzip(long zip);
+    int lookzip(long zipcode);
     int looktown(char c[]);
     int lookstate(char c[]);
+    const char * getData();
 
 };
 
@@ -69,7 +70,7 @@ inline void mainMenu(){
      
 
    std:: cout << "1) Add entry\n2) Edit entry\n3) Delete entry\n"
-         << "4) Find entry\n5) Print all entries\n6) Quit\nEnter your option []: \n";
+         << "4) Find entry\n5) Print all entries\n6) Save\n7) Load\n8) Exit\nEnter your option []: \n";
 
 }
 

@@ -42,6 +42,40 @@ void Contact :: add(){
 
 }
 
+
+const char * Contact :: getData(){
+
+    static char myData[500] = {};
+
+
+    strcat(myData,"<name>");      
+    strcat(myData,fname);
+    strcat(myData," ");
+    strcat(myData,lname);
+    strcat(myData,"\n<Street>");
+    strcat(myData,street);
+    strcat(myData,"</Street>");
+    strcat(myData,"\n<Town>");
+    strcat(myData,town);
+    strcat(myData,"</Town>");
+    strcat(myData,"\n<State>");
+    strcat(myData,state);
+    strcat(myData,"</State>");
+    strcat(myData,"\n<Phone>");
+    strcat(myData,phone);
+    strcat(myData,"</Phone>");
+    strcat(myData,"\n<Email>");
+    strcat(myData,email);
+    strcat(myData,"</Email");
+
+    int i = strlen(myData);
+
+    myData[i] = '\0';
+
+    return myData;
+
+}
+
 void Contact :: editName(){
     cin.clear();
     cin.ignore(std::numeric_limits<int>::max(),'\n');
@@ -113,8 +147,8 @@ int Contact :: lookhouseNumber(char c[]){
     return strcmp(c,street);
 }
 
-int Contact :: lookzip(long zip){
-    if(zip == zip){
+int Contact :: lookzip(long zipcode){
+    if(zip == zipcode){
         return 0;
     }else{
         return 1; 
@@ -131,12 +165,17 @@ int Contact :: lookstate(char c[]){
 
 void Contact :: print_chart(){
 
-    cout << fname << " " << lname
-    << setw(19) << street << "," 
-    << town << ","<< state << setw(14)
+    cout << fname << " " << lname << setw(6)
+    << "|"
+    << setw(14) << street << "," 
+    << town << ","<< state <<'|'<< setw(14)
     << phone
-     << setw(31)
+    << setw(5)
+    << "|"
+     << setw(25)
      << email
+     << setw(3)
+     << "|"
      << endl;
 
 

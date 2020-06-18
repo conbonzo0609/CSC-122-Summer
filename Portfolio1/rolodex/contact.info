@@ -1,0 +1,21 @@
+NAME: Connor Smithb
+Class: CSC-122-W01
+Date: 06/18/2020
+LAB:  Rolodex 
+Level: 4
+Add Load/Save Option: 2.5
+Total Level: 6.5
+
+Description: 
+The program is a phone book. It 
+holds first name, last name, street, town, 
+zip, phone, and email. The phone book can hold up 
+to 100 entries. The menu page has a few different options 
+Add, Edit, Delete, Find, and Print all entries. The sub menu 
+for the find button allows to be found by Name, Address, 
+Phone, and Email. The sub menu for the Edit allows you to edit 
+any of those data types above. You can select it by using the INT 
+or First Char. Once completed it will bring you back to the main menu. 
+You can use the delete feature to delete entry of your choosing. 
+Then you can finally use the print all entry option to get a table of 
+each entry.
