@@ -8,9 +8,9 @@ class Month
     int myMonth; 
 
 public: 
-Month(){
-    myMonth = 0;
-}
+    Month(int i = 0){
+        myMonth = i; 
+    }
 
     bool set_month();
 

@@ -52,6 +52,7 @@ const char * Contact :: getData(){
     strcat(myData,fname);
     strcat(myData," ");
     strcat(myData,lname);
+    strcat(myData,"/name>");
     strcat(myData,"\n<Street>");
     strcat(myData,street);
     strcat(myData,"</Street>");

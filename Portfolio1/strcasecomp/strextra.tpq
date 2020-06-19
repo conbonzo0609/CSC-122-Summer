@@ -1,0 +1,16 @@
+1) You can take a subscript and compare them 
+arr1[i] == arr2[i] This won't modify the variables contents. 
+
+2) You can use the tolower() function and pass each character 
+by value. 
+
+3) Value. You don't want to modify the string. 
+
+
+4) 0 is for when the comparison is 100% equal. If the comparison 
+is not equal is will look to see if str1 ASCII is > than str2 ASCII
+if so it will return 1 else it will return -1; 
+
+5) We would have to call our function 3 times for the 
+basic comparison. If excluding spaces/punctuation it would be 
+more. 

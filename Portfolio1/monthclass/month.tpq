@@ -1,0 +1,33 @@
+1) Yes my Month integer is private. I've setup a hashmap which allows 
+to translate a number to string very easily. They are private so the variables 
+can't be changed from any where in the program besides the mutator functions. Yes 
+the user of the class would need to make a call to the classes mutator/accessor methods.
+
+2) Overloading it allows you to have multiple methods of the same name 
+and it can tell the different by using different paremeters.
+
+3) GetMonth will take the integer value from the class and return its
+string value. 
+
+4) Input method should only take in the data. It shouldn't be prompting the user
+that is for the output method. 
+
+5) Output methods should be printing questions to the user as well. Its not good 
+to use endl as it will flush the output buffer where "\n" does not.
+
+6) Based on the input from the user it will choose the correct output method. 
+
+7) You can use cin.peek(), but I went for cin.fail() and it will make the user 
+input again and ask for a integer input. 
+
+
+8) It allows multiple test runs. I've added an exit selection on the menu which 
+makes it more convenient on when you would like to exit the program.  
+
+9) 
+The menu gives the user/programmer a lot more freedom on running tests. A
+dynamic program is a lot more beneficial when runnings tests vs a static program
+which will do the same thing everytime. 
+
+10) Its not ordered in anyway. They can run Set, Get, Advance, Retreat, or Exit
+at anypoint in the program. 

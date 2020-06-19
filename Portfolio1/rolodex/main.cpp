@@ -20,17 +20,13 @@ int main(){
 
 
     Contact myobj[100];
-    ofstream myfile,total;
-    ifstream multiple; 
-     
-    vector<string> myFileContainer;
+    ofstream myfile;
     bool program = true; 
     char choice,choice2,choice3; 
     long counter = 0;
     long counter9 = 0;
-    char ch; 
     string myEntry;
-    long x,answer,y,type,filetrack,files;
+    long x,answer,y,type;
     
 
     while (program)
@@ -302,8 +298,8 @@ int main(){
        counter9 = 0; 
        cout << "Please enter your file name";
        cin >> myEntry; 
-        myfile.open (myEntry);
-        myFileContainer.push_back(myEntry);
+       myfile.open (myEntry);
+       
 
         while(counter9 < counter){
            myfile << myobj[counter9].getData();
@@ -313,33 +309,6 @@ int main(){
         myfile.close();
         
         break;
-
-        case 'L':
-        case '7':
-        
-        total.open("total.txt");
-
-        files = myFileContainer.size();      //////Struggling to append 
-                                             /////Files from a vector holding file
-                                            /// names. 
-
-        for(int b = 0; b<files; b++){
-
-            multiple.open(myFileContainer[b]);
-            while(multiple.eof() == 0){
-                    multiple >> ch;
-                    total << ch;
-        }
-
-}
-
-
-
-
-        break; 
-        
-
-
 
         case 'Q':
         case '8':

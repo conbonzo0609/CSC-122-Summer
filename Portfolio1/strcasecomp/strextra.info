@@ -1,0 +1,13 @@
+NAME: Connor Smithb
+Class: CSC-122-W01
+Date: 06/05/2020
+LAB: strcasecomp 
+Level: 1.5
+Defaulted Argument(PUNC/SPACE): 1 
+Total Level: 2.5
+
+Description: It will compare two strings and return a -1, 0, 1 based off 
+comparison. If the string is equal it will return a 0. When the strings 
+aren't equal is will test the ASCII values. If str1 is > than str2 it will
+return a 1. If its not true it will return a -1. 
+

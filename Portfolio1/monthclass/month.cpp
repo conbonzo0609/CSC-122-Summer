@@ -22,6 +22,11 @@ unordered_map<string, int> look_up = {   // Month -> Number Lookup
 
 };
 
+// Month :: Month(){
+
+//     myMonth = 0; 
+
+// }
 
 bool Month::set_month () {                  //Completed set_month via substring & int 
     string x,y,substring,lowercase; 
@@ -46,7 +51,7 @@ bool Month::set_month () {                  //Completed set_month via substring 
         myNumbered = look_up[substring];
     }
 
-    if(myNumbered>0 & myNumbered<=12){
+    if(myNumbered>0 && myNumbered<=12){
         myMonth = myNumbered; 
         return true;
     }else{
@@ -91,8 +96,8 @@ string Month:: get_month () {
 }
 
 bool Month:: advance () {                 
-   int x,temp; 
-    cout << "Please enter your advancement"; 
+   int x;
+    cout << "Please enter your advancement" << "\n"; 
 
     cin >> x; 
 
@@ -113,19 +118,15 @@ bool Month:: advance () {
 
 
 bool Month:: retreat () {     
-    int x,month,temp; 
+    int x,temp; 
     
-    cout << "Please enter your retreatment"; 
+    cout << "Please enter your retreatment" << "\n"; 
 
    cin >> x; 
 
    temp = 0;
 
-   month = myMonth; 
-                        
-
-
-    while(temp != x){
+   while(temp != x){
 
         temp++; 
         myMonth--; 

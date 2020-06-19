@@ -70,7 +70,7 @@ inline void mainMenu(){
      
 
    std:: cout << "1) Add entry\n2) Edit entry\n3) Delete entry\n"
-         << "4) Find entry\n5) Print all entries\n6) Save\n7) Load\n8) Exit\nEnter your option []: \n";
+         << "4) Find entry\n5) Print all entries\n6) Save\n8) Exit\nEnter your option []: \n";
 
 }
 
