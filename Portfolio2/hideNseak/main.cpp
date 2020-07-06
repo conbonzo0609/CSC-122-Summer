@@ -18,10 +18,20 @@ inline void openMessage(){
 
 }
 
+inline void exitMessage(){
+
+    cout << "\nThank you for using the NSP!!\n\nEndeavor to have an amazing day!";
+
+
+}
+
 
 int main(){
-    bool check,found;
+    bool check,hold;
+    char yesno; 
+    long x, i; 
     vector <string> names = {};
+    vector <long> locations = {};
     string file,namelook;
     fstream myFile; 
 
@@ -32,6 +42,13 @@ int main(){
     cin >> file;
 
     myFile.open(file,ios::in);
+
+    hold = true;
+
+    while (hold)
+    {
+   
+    
 
     while(check){
         
@@ -76,27 +93,88 @@ int main(){
 
     std :: getline(std::cin, namelook);
 
-    long x = 0; 
-    found = false; 
+     x = 0; 
+    
 
-    while(x<names.size()){
-        if(strcmp_ncase(namelook, names[x]) == 0){
-            found = true; 
-            break; 
-            
+    cout << "\n\nWould you like to find a substring of that name if occurs?(Y/N)";
 
-        }else{
-            x++;
+    cin >> yesno;
+
+    if(tolower(yesno) == 'y'){
+        
+        x = 0; 
+        while(x<names.size()){
+            std:: size_t found = names[x].find(namelook);
+
+        if (found != std::string::npos) {
+            locations.push_back(x);
         }
 
-  }
         x++; 
-        string index = "\n" + namelook + " is the " + mySuffix(x) + " name in the file!";
 
-        cout << (found == true ?  index  : "\nError Not found in the file" );
+        }
+
+         i = 0; 
+
+        while(i<locations.size()){
+
+        string index = "\n" + namelook + " is the " + mySuffix(locations[i]) + " sub-name in the file!";
+
+        cout << (locations.size() != 0 ?  index  : "\nError Not found in the file" );
+        i++; 
+
+     }
+
+
+        locations.clear();
+
+        // cout << locations[0] << "\n" << locations[1];
+
+
+
+    }else{
+
+        while(x<names.size()){
+        if(strcmp_ncase(namelook, names[x]) == 0){
+             locations.push_back(x);
+            
+        }
+        x++;
+        
+
+  }
+        i = 0; 
+       
+        while(i<locations.size()){
+        string index = "\n" + namelook + " is the " + mySuffix(locations[i]) + " name in the file!";
+
+        cout << (locations.size() != 0 ?  index  : "\nError Not found in the file" );
+        i++; 
+        }
+
+        locations.clear(); // Empty Vector
+
+
+
+
+
+    }
+
 
     
 
+        cout << "\n\nWould you like to make another search?(Y/N)";
+
+        cin >> yesno;
+
+        if(tolower(yesno) == 'y'){
+            hold = true; 
+        }else{
+            hold = false; 
+            exitMessage();
+        }
+
+    }
 
 
     }

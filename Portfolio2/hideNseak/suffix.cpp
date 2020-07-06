@@ -7,14 +7,17 @@
 using namespace std; 
 
 string mySuffix(long suffix){
+        suffix++;
         short temp = static_cast<short>(abs(suffix) % 100); 
         short temp2 = static_cast<short>(abs(suffix) % 10);
         string final,final1;
+         
         if((temp == 11) || (temp == 12) || (temp == 13)){
                 final = to_string(suffix);
                 final += "th";
                 return final;
         }
+         
         switch(temp2){
             case 1: final1 += "st";
                     break; 
@@ -35,7 +38,7 @@ string mySuffix(long suffix){
             case 9: final1 += "th";
                     break; 
  }
- 
+
     final1 = to_string(suffix) + final1;
 
         return final1;
