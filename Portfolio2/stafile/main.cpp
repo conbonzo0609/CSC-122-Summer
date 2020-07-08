@@ -107,7 +107,8 @@ int main(){
 
     // cout << findDeviation(myNumbers);
 
-    fstream myFile; 
+    ifstream myFile; 
+    ofstream outFile
     string file; 
     long sum,x,counter,min,max;
     double avg,deviation;
@@ -128,7 +129,7 @@ int main(){
 
         if(myFile.is_open()){
             check = false; 
-            cout << "File '" << file << "' opened successfully!";
+            cout << "\nFile '" << file << "' opened successfully!";
             break; 
         }
         else {
