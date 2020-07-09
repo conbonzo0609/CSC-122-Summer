@@ -5,3 +5,7 @@ Project: rollcall
 Level: 
 Assignment:2
 Total:2
+
+It asks for a file to read, and attempts to open. If it fails
+it will ask for another file, but if it opens it will read
+and format the data into a chart.
