@@ -120,7 +120,8 @@ int main(){
         cin >> answer1; 
         myfile.precision(2);
         if(answer1=='Y'){
-             myfile <<  "#"
+             myfile << myobj[counter].getCheckNumber()
+                 <<  "#"
                  << ", amount: "
                  << fixed
                  << amount
