@@ -1,0 +1,14 @@
+1). 
+Run a while loop with .eof(); going line by line
+
+2) 
+while loop 
+
+3) 
+I put all my matches into a vector, and 
+if the vector size is 0 then i'll send an error
+"\nError Not found in the file"
+
+4) 
+1 line = 1 name. 
+It would take both names. 

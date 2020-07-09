@@ -58,6 +58,7 @@ int main(){
            string name; 
             while (getline(myFile,name))
             {
+                
                  names.push_back(name);
                
             }
