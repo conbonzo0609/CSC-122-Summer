@@ -1,0 +1,18 @@
+NAME: Connor Smith
+Class: CSC-122-W01
+Date: 07/09/2020
+Project: dyncheckbook
+Level: 
+Assignment:4.5
+File Input:2
+Total: 6.5
+
+Description: 
+The menu has 5 features Deposit, Withdraw, Quick Account Update,
+full reconcile, and All checks sort. The deposit is straight forward 
+and will deposit all money into the account. The withdraw method 
+will take out money and randomly choose if it was cashed or not. It 
+will also have a checkNumber attached. Quick Account Update will
+Full Reconcile will output a table of all the deposits/withdrawls. 
+All Checks Sort will print from lowest->highest check numbers. It will
+include checkNumber, Amount, and cashed.`

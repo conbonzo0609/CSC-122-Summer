@@ -1,14 +1,12 @@
  #include "Check.h"
 #include <iostream>
-#include <string> 
 #include <time.h>
-#include <vector> 
-#include <iomanip>
+
 
 
 using namespace std; 
 
-Check :: Check(){
+Check :: Check(){  //Constructor
 
     checkNumber = 0;      //New Object Created
     checkAmount = 0.0; 
@@ -16,22 +14,22 @@ Check :: Check(){
 
 }
 
-void Check :: deposit(double CheckA){
+void Check :: deposit(double CheckA){   //MUTATOR
 
     checkNumber = -1;  //Don't care for checkNumber
     checkAmount = CheckA;
     checkCashed = true; //Cashed
 }
 
-void Check :: withdraw(long checkN, double checkA, bool checkC){
+void Check :: withdraw(long checkN, double checkA, bool checkC){  //MUTATOR
 
-    checkNumber = checkN;
+    checkNumber = checkN;   
     checkAmount = checkA;
     checkCashed = checkC; 
 
 }
 
-bool getRand(){
+bool getRand(){      //random cashed
 
     srand( time(NULL) );
 
@@ -46,7 +44,7 @@ bool getRand(){
 
 
 
-long Check :: getCheckNumber(){ return checkNumber;}
-double Check :: getCheckAmount(){ return checkAmount;}
+long Check :: getCheckNumber(){ return checkNumber;}  //accessors
+double Check :: getCheckAmount(){ return checkAmount;} 
 bool Check :: getCheckCashed(){ return checkCashed;}
 

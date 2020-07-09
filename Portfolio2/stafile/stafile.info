@@ -1,0 +1,19 @@
+NAME: Connor Smith
+Class: CSC-122-W01
+Date: 07/09/2020
+Project: stafile
+Level: 
+Assignment: 1.5 
+Total: 1.5
+
+Description: 
+
+The program will ask for an input file. Once file is opened..
+It will then grab the numbers and store then in a vector. 
+From there it will perform all the calculations and display 
+it back to the console. 
+
+
+
+
+

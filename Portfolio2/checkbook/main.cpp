@@ -1,6 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include "Check.h"
+#include <string>
 #include "Account.h"
 
 
@@ -59,17 +61,22 @@ void printL(){
 
 int main(){
     bool menu = true;
-    char answer,yesno; 
+    char answer,answer1,yesno; 
     long counter = 0;
     long checkNum = 0; 
-    double amount;  
+    double amount;
+    ofstream myfile;
+    string data,checking; 
     Check myobj[100];
     Account obj; 
+
+    
+
 
     while(menu){
 
     print_menu();
-
+    
     cin >> answer;
 
     switch (answer)
@@ -91,11 +98,49 @@ int main(){
         amount = 0; 
         cout << "\nHow much would you like to withdraw?\n";
         cin >> amount;
-        // bool value = getRand(); 
+         
         myobj[counter].withdraw(checkNum++, amount, getRand());
-       if(myobj[counter].getCheckCashed())
-             obj.withdraw(amount);    
-        counter++;                                // I did random
+       if(myobj[counter].getCheckCashed()) 
+             obj.withdraw(amount);   
+        
+       
+        if(myobj[counter].getCheckCashed() == 1){
+           checking = "TRUE";
+       }else{
+           checking = "FALSE";
+       }
+        
+
+        myfile.open("checks.txt", ios_base::app);
+
+      
+
+        cout << "Would you like the data inputted into a file?(Y/N)\n";
+
+        cin >> answer1; 
+        myfile.precision(2);
+        if(answer1=='Y'){
+             myfile <<  "#"
+                 << ", amount: "
+                 << fixed
+                 << amount
+                 << ", cashed: "
+                 << checking 
+                 << "\n";
+        }else{
+            cout << "#"
+                 << myobj[counter].getCheckNumber()
+                 << ", amount: "
+                 << setprecision(2)
+                 << fixed
+                 << amount
+                 << ", cashed: "
+                 << checking
+                 << "\n";
+        }
+
+         myfile.close();
+         counter++;                                
         break; 
 
     case '3':

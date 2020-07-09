@@ -108,7 +108,7 @@ int main(){
     // cout << findDeviation(myNumbers);
 
     ifstream myFile; 
-    ofstream outFile
+    ofstream outFile;
     string file; 
     long sum,x,counter,min,max;
     double avg,deviation;

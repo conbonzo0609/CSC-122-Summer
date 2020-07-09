@@ -1,0 +1,23 @@
+1) Yes the space matters. It wouldn't grab each number
+individually if there was no spaces.
+
+2) 
+No the order does not affect calculations because 
+I find my smallest/largest numbers after once they are 
+all stored in a vector; 
+
+3) 
+Yes they have to be integers. My input is 
+taking in integer type values.
+
+4) 
+If you store all your values into memory it's possible to 
+run out of space, but to perform the calculations for this 
+assignment its not required. In my case it would be possible to 
+run out of space. 
+
+5) I start at the index[0] and move through the list, 
+and if its meet my condition i'll set it. 
+
+min = index[0]; // max = index[0]
+

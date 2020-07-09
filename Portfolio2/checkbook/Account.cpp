@@ -1,37 +1,28 @@
 #include "Account.h"
 #include <iostream>
-#include <string> 
-#include <vector> 
-#include <iomanip>
+
 
 
 using namespace std; 
 
-Account :: Account(){
+Account :: Account(){   //constructor
 
     totalbalance = 0.0;
     previousbalance = 0.0; 
 
 }
-
-double Account :: getTotalBalance(){
-    return totalbalance;
-    
-}
-
-double Account :: getPreviousBalance(){
-
-    return previousbalance;
-}
+                                    //accessor
+double Account :: getTotalBalance(){return totalbalance;}
+double Account :: getPreviousBalance(){return previousbalance;}
 
 
-void Account :: deposit(double add){
+void Account :: deposit(double add){  //mutator
     previousbalance = totalbalance;
     totalbalance = totalbalance + add; 
 
 }
 
-void Account :: withdraw(double sub){
+void Account :: withdraw(double sub){  //mutator
   previousbalance = totalbalance; 
   totalbalance = totalbalance - sub; 
 
