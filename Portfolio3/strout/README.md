@@ -1,0 +1,1 @@
+http://www.craie-programming.org/122/labs/templ.dynarray.html
