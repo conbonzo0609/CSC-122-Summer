@@ -96,7 +96,7 @@ int main(){
     case '2':
     case 'W':
         amount = 0; 
-        cout << "\nHow much would you like to withdraw?\n";
+        cout << "\nHow much would you like to withdraw???\n";
         cin >> amount;
          
         myobj[counter].withdraw(checkNum++, amount, getRand());
