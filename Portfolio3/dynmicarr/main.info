@@ -1,0 +1,15 @@
+NAME: Connor Smith
+Class: CSC-122-W01
+Date: 07/22/2020
+Project: dynamicarray
+Assignment:4
+Total:4
+
+Description
+It will generate a dynamic array of 3 data types 
+short, double, and string will store 20 elements.
+It will then set the values and get the values through the class. We won't have to change
+the class input datatypes because of the template. 
+
+
+

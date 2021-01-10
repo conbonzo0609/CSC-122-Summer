@@ -1,0 +1,16 @@
+1) No enumerators behave as constants
+
+2)We can use substr and also find the length of the inputted value.
+
+ if(card == dia.substr(0 , cardL) ) 
+                mySuit = diamonds;
+
+If the data is equal we set it to our suit
+
+
+3) 
+Yes we need Substr which is from 'String' library
+
+4) 
+Aces, kings, queens, jacks, and 2-10. 
+

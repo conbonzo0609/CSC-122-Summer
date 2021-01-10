@@ -6,7 +6,7 @@
 const size_t MAX_NAME = 46,
              MAX_STREET = 35,
              MAX_TOWN = 28,
-             MAX_STATE = 3,
+             MAX_STATE = 10,
              MAX_EMAIL = 65,
              MAX_PHONE = 14;
 

@@ -64,7 +64,7 @@ int main ()
 
         if(info.is_open()){
             check = false; 
-            cout << "\nFile '" << file << "' opened successfully!";
+            cout << "\nFile '" << file << "' goodbye";
             break; 
         }
         else {

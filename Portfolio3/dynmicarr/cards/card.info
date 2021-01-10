@@ -1,0 +1,13 @@
+NAME: Connor Smith
+Class: CSC-122-W01
+Date: 07/22/2020
+Project: cards
+Assignment:2.5
+Total:2.5
+
+Description- 
+
+It will ask for what suit of card you have. Then it will take your input, 
+and subscript it to the full length. Therefore if you don't enter the full 
+amount it will still trigger and find the card you've selected. It will keep asking 
+for another card until you say no. 
