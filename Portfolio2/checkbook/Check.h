@@ -23,7 +23,7 @@ public:
 };
 
 
-///change to code
+///kevin
 
 
 bool getRand();
