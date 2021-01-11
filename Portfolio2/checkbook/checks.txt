@@ -1,1 +1,2 @@
 #, amount: 12.500, cashed: FALSE
+0#, amount: 50.00, cashed: TRUE

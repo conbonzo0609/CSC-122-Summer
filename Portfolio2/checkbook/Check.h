@@ -19,8 +19,11 @@ public:
     void cashCheck();
 
 
+
 };
 
+
+///change to code
 
 
 bool getRand();
